@@ -83,7 +83,7 @@ struct LockScreen : View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 15, height: 15)
-                        .foregroundColor(.green)
+                        .foregroundColor(.white)
                         .padding()
                 }
             }
@@ -119,9 +119,9 @@ struct LockScreen : View {
             
             Spacer(minLength: 0)
             
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: height < 750 ? 5 : 15){
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: height < 750 ? 5 : 15) {
                 
-                ForEach(1...9, id: \.self){value in
+                ForEach(1...9, id: \.self) {value in
                     
                     PasswordButton(value: "\(value)",password: $password, key: $key, unlocked: $unLocked, wrongPass: $wrongPassword)
                 }
@@ -175,7 +175,7 @@ struct PasswordButton : View {
             
             VStack{
                 
-                if value.count > 1{
+                if value.count > 1 {
                     
                     Image(systemName: "delete.left")
                         .font(.system(size: 24))
