@@ -189,42 +189,37 @@ struct PasswordButton : View {
                 }
             }
             .padding()
-
         })
     }
     
-    func setPassword(){
+    func setPassword() {
         
-        // checking if backspace pressed...
-        
-        withAnimation{
+        withAnimation {
             
-            if value.count > 1{
+            if value.count > 1 {
                 
-                if password.count != 0{
+                if password.count != 0 {
                     
                     password.removeLast()
                 }
-            }
-            else{
+                
+            } else {
                 
                 if password.count != 4{
                     
                     password.append(value)
                     
-                    // Delay Animation...
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         
                         withAnimation{
                             
-                            if password.count == 4{
+                            if password.count == 4 {
                                 
-                                if password == key{
+                                if password == key {
                                     
                                     unlocked = true
-                                }
-                                else{
+                                    
+                                } else {
                                     
                                     wrongPass = true
                                     password.removeAll()
