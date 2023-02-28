@@ -3,7 +3,7 @@
 //  OTP Code
 //
 //  Created by Elaidzha Shchukin on 28.02.2023.
-//
+//  Done
 
 import SwiftUI
 
@@ -31,13 +31,13 @@ struct OTPCODE : View {
         
         ZStack{
             
-            if unLocked{
+            if unLocked {
                 
                 Text("App Unlocked")
                     .font(.title2)
                     .fontWeight(.heavy)
-            }
-            else{
+                
+            } else {
                 
                 LockScreen(unLocked: $unLocked)
             }
