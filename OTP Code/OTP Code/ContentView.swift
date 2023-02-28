@@ -98,21 +98,17 @@ struct LockScreen : View {
             Text("Enter Pin to Unlock")
                 .font(.title2)
                 .fontWeight(.heavy)
-                .padding(.top,20)
+                .padding(.top, 20)
             
-            HStack(spacing: 22){
+            HStack(spacing: 22) {
                 
-                // Password Circle View...
-                
-                ForEach(0..<4,id: \.self){index in
+                ForEach(0..<4, id: \.self) {index in
                     
                     PasswordView(index: index, password: $password)
                 }
             }
-            // for smaller size iphones...
+    
             .padding(.top,height < 750 ? 20 : 30)
-            
-            // KeyPad....
             
             Spacer(minLength: 0)
             
