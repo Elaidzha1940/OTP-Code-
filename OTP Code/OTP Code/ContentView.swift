@@ -118,11 +118,9 @@ struct LockScreen : View {
             
             Spacer(minLength: 0)
             
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3),spacing: height < 750 ? 5 : 15){
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: height < 750 ? 5 : 15){
                 
-                // Password Button ....
-                
-                ForEach(1...9,id: \.self){value in
+                ForEach(1...9, id: \.self){value in
                     
                     PasswordButton(value: "\(value)",password: $password, key: $key, unlocked: $unLocked, wrongPass: $wrongPassword)
                 }
@@ -150,9 +148,7 @@ struct PasswordView : View {
             
             Circle()
                 .stroke(Color.white,lineWidth: 2)
-                .frame(width: 30, height: 30)
-            
-            // checking whether it is typed...
+                .frame(width: 15, height: 15)
             
             if password.count > index{
                 
