@@ -46,3 +46,11 @@ struct OTPCODE : View {
         .preferredColorScheme(unLocked ? .light : .dark)
     }
 }
+
+struct LockScreen : View {
+    
+    var body: some View {
+        
+        
+    }
+}
