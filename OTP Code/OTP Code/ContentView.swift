@@ -49,7 +49,7 @@ struct OTPCODE : View {
 struct LockScreen : View {
     
     @State var password = ""
-    @AppStorage("lock_Password") var key = "5654"
+    @AppStorage("lock_Password") var key = "2023"
     @Binding var unLocked : Bool
     @State var wrongPassword = false
     let height = UIScreen.main.bounds.width
@@ -96,6 +96,7 @@ struct LockScreen : View {
                 .padding(.top, 20)
             
             Text("Enter Pin to Unlock")
+                .foregroundColor(.brown)
                 .font(.title2)
                 .fontWeight(.heavy)
                 .padding(.top, 20)
@@ -147,14 +148,14 @@ struct PasswordView : View {
         ZStack{
             
             Circle()
-                .stroke(Color.white,lineWidth: 2)
+                .stroke(Color.white, lineWidth: 2)
                 .frame(width: 15, height: 15)
             
             if password.count > index{
                 
                 Circle()
-                    .fill(Color.white)
-                    .frame(width: 30, height: 30)
+                    .fill(Color.brown)
+                    .frame(width: 15, height: 15)
             }
         }
     }
@@ -176,13 +177,11 @@ struct PasswordButton : View {
                 
                 if value.count > 1{
                     
-                    // Image...
-                    
                     Image(systemName: "delete.left")
                         .font(.system(size: 24))
                         .foregroundColor(.white)
-                }
-                else{
+                    
+                } else {
                     
                     Text(value)
                         .font(.title)
