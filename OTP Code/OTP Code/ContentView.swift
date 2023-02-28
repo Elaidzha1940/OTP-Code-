@@ -83,7 +83,7 @@ struct LockScreen : View {
                         .renderingMode(.template)
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(.brown)
+                        .foregroundColor(.orange)
                         .padding()
                 }
             }
@@ -96,7 +96,7 @@ struct LockScreen : View {
                 .padding(.top, 20)
             
             Text("Enter Pin to Unlock")
-                .foregroundColor(.brown)
+                .foregroundColor(.orange)
                 .font(.title2)
                 .fontWeight(.heavy)
                 .padding(.top, 20)
@@ -148,13 +148,13 @@ struct PasswordView : View {
         ZStack{
             
             Circle()
-                .stroke(Color.white, lineWidth: 2)
+                .stroke(Color.orange, lineWidth: 2)
                 .frame(width: 15, height: 15)
             
             if password.count > index{
                 
                 Circle()
-                    .fill(Color.brown)
+                    .fill(Color.orange)
                     .frame(width: 15, height: 15)
             }
         }
@@ -179,13 +179,13 @@ struct PasswordButton : View {
                     
                     Image(systemName: "delete.left")
                         .font(.system(size: 24))
-                        .foregroundColor(.white)
+                        .foregroundColor(.orange)
                     
                 } else {
                     
                     Text(value)
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.orange)
                 }
             }
             .padding()
