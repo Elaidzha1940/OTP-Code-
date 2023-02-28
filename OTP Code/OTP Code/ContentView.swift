@@ -9,18 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+     
+        NavigationView {
+            
+            OTPCODE()
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct OTPCODE : View {
+    
+    @State var unLocked = false
+    
+    var body: some View {
+        
+        
+        ZStack{
+            
+            if unLocked{
+                
+                Text("App Unlocked")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                
+            } else {
+                
+                LockScreen(unLocked: $unLocked)
+            }
+        }
+        .preferredColorScheme(unLocked ? .light : .dark)
     }
 }
