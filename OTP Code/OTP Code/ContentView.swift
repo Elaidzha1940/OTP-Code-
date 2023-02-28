@@ -56,19 +56,18 @@ struct LockScreen : View {
     
     var body: some View{
         
-        VStack{
-            
-            HStack{
+        VStack {
+            HStack {
                 
                 Spacer(minLength: 0)
                 
                 Menu(content: {
                     
                     Label(
-                        title: { Text("Help") },
+                        title: { Text("") },
                         icon: { Image(systemName: "info.circle.fill") })
                         .onTapGesture(perform: {
-                            // perform actions...
+                        
                         })
                     
                     Label(
@@ -80,11 +79,11 @@ struct LockScreen : View {
                     
                 }) {
                     
-                    Image("menu")
+                    Image("Menu")
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 19, height: 19)
-                        .foregroundColor(.white)
+                        .frame(width: 15, height: 15)
+                        .foregroundColor(.green)
                         .padding()
                 }
             }
@@ -92,8 +91,9 @@ struct LockScreen : View {
             
             Image("logo")
                 .resizable()
+                .cornerRadius(12)
                 .frame(width: 95, height: 95)
-                .padding(.top,20)
+                .padding(.top, 20)
             
             Text("Enter Pin to Unlock")
                 .font(.title2)
